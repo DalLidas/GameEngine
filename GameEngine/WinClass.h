@@ -11,4 +11,9 @@
 class WinClass {
 public:
 	WinClass(int weight, int height);
+
+	HWND GetHandle();
+
+private:
+	HWND wHandle;
 };

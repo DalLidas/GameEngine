@@ -1,7 +1,4 @@
 #include "WinClass.h"
-#include <Windows.h>
-
-
 
 LRESULT CALLBACK WinProc(HWND handle, UINT msg, WPARAM wparam, LPARAM lparam) {
 	if (msg == WM_DESTROY ||
@@ -23,8 +20,12 @@ WinClass::WinClass(int width, int height) {
 	RegisterClass(&wc);
 
 	// Create the window
-	CreateWindow(_T("GameEngine"), _T("GameEngine (Main Window)"),
+	wHandle = CreateWindow(_T("GameEngine"), _T("GameEngine (Main Window)"),
 		WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_VISIBLE,
 		100, 100, width, height,
 		nullptr, nullptr, nullptr, nullptr);
+}
+
+HWND WinClass::GetHandle(){
+	return wHandle;
 }

@@ -5,14 +5,17 @@
 #include <windows.h>
 
 #include "WinClass.h"
+#include "Renderer.h"
+
 
 int CALLBACK wWinMain(
 	_In_ HINSTANCE hInstance,
 	_In_opt_ HINSTANCE hPrevInstance,
 	_In_ LPWSTR lpCmdLine,
-	_In_ int nShowCmd){
+	_In_ int nShowCmd ){
 
 	WinClass windows(400, 400);
+	Renderer renderer(windows);
 
 	MSG msg = { 0 };
 	while (true) {
